@@ -1,0 +1,25 @@
+server.port: 8080
+spring:
+  application:
+    name: User Service
+  r2dbc:
+    url: r2dbc:mysql://localhost:3306/pharmacy
+    password: root
+    username: root
+    pool:
+      initial-size: 1
+      max-size: 10
+      max-idle-time: 30m
+  jooq:
+    sql-dialect: mysql
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    use-root-path: true
+
+
+logging:
+  level:
+    org.springframework.boot: WARN
+
+

@@ -1,0 +1,26 @@
+server.port: 8080
+spring:
+  application:
+    name: User Service Test
+  r2dbc:
+    url: r2dbc:h2:mem:///pocdb?options=DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    password: sa
+    username:
+  jooq:
+    sql-dialect: mysql
+  sql:
+    init:
+      platform: mysql
+      schema-locations: classpath*:db/schema.sql
+      data-locations: classpath*:db/data.sql
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    use-root-path: true
+
+logging:
+  level:
+    org.hibernate.type: info
+    org.springframework.boot: INFO
+    org.springframework.data.r2bc: DEBUG
+
